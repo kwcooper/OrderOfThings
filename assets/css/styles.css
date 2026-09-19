@@ -423,9 +423,9 @@ div.boxed-header hr {
 @media (max-width: 600px) {
   .overview {
     text-align: left;
-    font-size: 3.2rem;
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
     letter-spacing: -0.0375rem;
-    line-height: 3.52rem;
+    line-height: 1.1;
   }
 }
 
@@ -986,34 +986,24 @@ div.boxed p a:hover {
   overflow: hidden; /* Ensures content is revealed sequentially */
   border-right: .13em solid whitesmoke; /* The blinking typewriter cursor */
   white-space: nowrap; /* Keeps the text on a single line */
+  max-width: 100%; /* Never exceed the parent, even if ch math runs long */
   margin: 0 auto; /* Gives a nice scrolling effect if centered */
-  /*letter-spacing: .15em;  Adjust to style preferences */
-/*  padding-right: 0.15em; */
-  /* The exact character count determines the steps value (19 characters here) */
-  width: 14ch; 
-  
-  /* Combined animations: typing execution and cursor blink */
-  animation: 
-    typing 3.5s steps(12, end) forwards,
-    blink-caret .95s step-end infinite;
+  /* Width is in ch so it scales with font-size; must match the text's character count (15) */
+  width: 15ch;
 
-  /* Blinks 5 times (.75s * 5 = 3.75s), matching the 3.5s typing time */
-  animation: 
-    typing 3.5s steps(12, end) forwards,
-    blink-caret .95s step-end 7 forwards; 
+  /* Blinks 7 times, matching the 3.5s typing time */
+  animation:
+    typing 3.5s steps(15, end) forwards,
+    blink-caret .95s step-end 7 forwards;
 }
 
-@media (max-width: 768px) {
-  .typewriter h1 {
-    font-size: 35px; /* Adjust this value to your liking */
-    line-height: 0.9;
-  }
-}
+/* Font-size/line-height come from .overview so the date stays proportional
+   to the rest of the heading instead of a disconnected fixed size */
 
 /* The typing animation (reveals width character-by-character) */
 @keyframes typing {
   from { width: 0 }
-  to { width: 11ch }
+  to { width: 15ch }
 }
 
 /* The typewriter cursor animation */
