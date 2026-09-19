@@ -1,0 +1,60 @@
+body.scheme-midnight {
+    background-color: #1a1c20;
+    color: #fffff5;
+}
+body.scheme-midnight ::selection {
+    background: #fffff5;
+    color: #1a1c20;
+    text-shadow: none;
+}
+body.scheme-midnight section.bg-alt {
+    background-color: #27282a;
+}
+body.scheme-midnight blockquote, body.scheme-midnight hr {
+    border-color: #919297;
+}
+body.scheme-midnight blockquote {
+    border-color: #7b7d80;
+}
+body.scheme-midnight, body.scheme-midnight div.boxed p a:hover, body.scheme-midnight .top__link:hover, body.scheme-midnight .bio-text p, body.scheme-midnight .bio-links a {
+    color: #fffff5;
+}
+body.scheme-midnight .links a, .top__brand, body.scheme-midnight .eyebrow, body.scheme-midnight p, body.scheme-midnight pre code, body.scheme-midnight del, body.scheme-midnight .site-footer, body.scheme-midnight .site-footer a {
+    color: #919297;
+}
+body.scheme-midnight blockquote, body.scheme-midnight blockquote p, body.scheme-midnight blockquote a {
+    color: #7b7d80;
+}
+body.scheme-midnight .top__cta {
+    background-color: #fbfbe5;
+    color: #1a1c20;
+}
+body.scheme-midnight .top__cta a {
+    color: #1a1c20;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* Animated pastel gradient background override */
+/* ------------------------------------------------------------------------------- */
+@keyframes pastelGradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body.scheme-midnight {
+    background: linear-gradient(120deg, #ffd6e8, #d6e8ff, #d6fff0, #fff6d6, #f0d6ff, #ffd6e8);
+    background-size: 400% 400%;
+    animation: pastelGradientShift 20s ease infinite;
+    color: #2f2f38;
+}
+body.scheme-midnight .top__brand,
+body.scheme-midnight div.boxed p a:hover,
+body.scheme-midnight .top__link:hover,
+body.scheme-midnight .bio-text p,
+body.scheme-midnight .bio-links a {
+    color: #2f2f38;
+}
+body.scheme-midnight section.bg-alt {
+    background-color: rgba(255, 255, 255, 0.35);
+}
