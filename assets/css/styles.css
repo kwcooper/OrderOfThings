@@ -1005,7 +1005,7 @@ div.boxed p a:hover {
 
 @media (max-width: 768px) {
   .typewriter h1 {
-    font-size: 40px; /* Adjust this value to your liking */
+    font-size: 35px; /* Adjust this value to your liking */
     line-height: 0.9;
   }
 }
